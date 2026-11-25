@@ -1,66 +1,33 @@
 package sn.supdeco.modele;
 
-public class Etudiant {
- private int id;
- private String nom;
- private String prenom;
- private double moyenne;
+public class Etudiant  extends Personne{
+ private String matricule;
 
-
-
- // Constructeur
-
-
-    public Etudiant(int id, String nom, String prenom, double moyenne) {
-        this.id = id;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.moyenne = moyenne;
+    public Etudiant(String nom, String prenom, String email, String matricule) {
+        super(nom, prenom, email);
+        this.matricule = matricule;
     }
 
-    // Getters et setters
-    public int getId() {
-        return id;
+    @Override
+    public String getRole() {
+        return "Etudiant";
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public String getMatricule() {
+        return matricule;
     }
 
-    public String getNom() {
-        return nom;
+    public void setMatricule(String matricule) {
+        this.matricule = matricule;
     }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
-    }
-
-    public double getMoyenne() {
-        return moyenne;
-    }
-
-    public void setMoyenne(double moyenne) {
-
-        this.moyenne = moyenne;
-    }
-
-    // ToString methode
 
     @Override
     public String toString() {
         return "Etudiant{" +
-                "id=" + id +
+                "matricule='" + matricule + '\'' +
                 ", nom='" + nom + '\'' +
                 ", prenom='" + prenom + '\'' +
-                ", moyenne=" + moyenne +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
